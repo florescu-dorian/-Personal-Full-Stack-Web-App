@@ -1,0 +1,129 @@
+.main-box
+{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: 60vh;
+
+    background: #D9D9D9;
+}
+
+.top-box
+{
+    left: 12.83vw;
+    top: 4.44vh;
+    position: absolute;
+    width: 70.83vw;
+    height: 22.22vh;
+    display: flex;
+    background: #7AC7FF;
+}
+
+.bot-box
+{
+    left: 12.83vw;
+    bottom: 8.89vh;
+    position: absolute;
+    width: 70.83vw;
+    height: 44.44vh;
+    display: flex;
+    background: #7AC7FF;
+}
+
+.desc-in
+{
+    left: 0px;
+    top: 5.56vh;
+    position: relative;
+    width: 18.58vw;
+    height: 9.56vh;
+    resize: none;
+}
+
+.tok-in
+{
+    left: 0px;
+    top: 5.56vh;
+    position: relative;
+    width: 18.58vw;
+    height: 9.56vh;
+    resize: none;
+}
+
+.desc
+{
+    left: 12.5vw;
+    top: 3.33vh;
+    margin: 0;
+    padding: 0 0;
+    position: relative;
+}
+
+.tok
+{
+    left: 10.42vw;
+    top: 3.33vh;
+    margin: 0;
+    padding: 0 0;
+    position: relative;
+}
+
+.user-nft
+{
+    left: 7.08vw;
+    top: 7.22vh;
+    position: relative;
+    width: 28.33vw;
+    height: 22.22vh;
+
+    background: #aaaaaa;
+}
+
+.val-desc
+{
+    left: 12.5vw;
+    top: 5.56vh;
+    position: relative;
+    width: 12.75vw;
+    height: 10vh;
+    resize: none;
+    position: absolute;
+
+}
+
+.c-nft
+{
+    height: 3.89vh;
+    margin-top: 7.78vh;
+}
+
+.u-nft
+{
+    height: 3.89vh;
+    margin-top: 7.78vh;
+}
+
+
+.nft-img
+{
+    max-width: 10.42vw;
+    max-height: 9.33vh;
+}
+
+.edit-btn
+{
+    position: absolute;
+    top: 16.67vh;
+    left: 17.08vw;
+}
+
+
+
+.editBox {
+    display: none;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 1.11vh;
+    background-color: #f9f9f9;
+}

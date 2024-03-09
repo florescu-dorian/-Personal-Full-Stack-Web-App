@@ -1,0 +1,13 @@
+/* Handles style for header */
+header {
+    max-height: 10vh;
+    width: 100vw;
+    overflow: hidden;
+    height: auto;
+  }
+  
+  /* Handles style for header image */
+  img {
+    height: auto;
+    width: 100%;
+  }

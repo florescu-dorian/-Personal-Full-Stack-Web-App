@@ -1,0 +1,54 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/seller.css') }}">
+{% endblock %}
+
+
+{% block maincontent %}
+<div>
+  <h2>User <span id="username"></span>, Check Out These Cool NFT's For Sale</h2>
+  <p> Balance: {{ userBalance }}</p>
+  <hr>
+  <div>
+    {% for nft in NFTs %}
+    <div>
+      <div>
+        <img class="nftimage" src="static/main/images/{{nft['file_data']}}" alt="NFT image">
+      </div>
+      <div>
+        <p> Token: {{ nft['token']}}</p>
+        <p> Description: {{ nft['description']}}</p>
+      </div>
+      <div>
+        <form action="/buyers" method="post" enctype="multipart/form-data">
+            <label for="buy"></label>
+            <input type="hidden" name="purpose" value="buy">
+            <input type="hidden" name="nft_id" value="{{nft['nft_id']}}">
+            <div>
+              <br>
+              <button type="submit"> Buy </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+
+function showEditBox() {
+  const editBox = document.querySelector('.editBox');
+  editBox.style.display = 'block';
+}
+
+let email = '{{user}}';
+let username = email.split('@')[0];
+document.getElementById('username').textContent = username;
+</script>
+
+{% endblock %}

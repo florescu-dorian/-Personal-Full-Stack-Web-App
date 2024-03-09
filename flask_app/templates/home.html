@@ -1,0 +1,30 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="split">
+  <div class="left-col">
+      <img class="selfie" src="static/main/images/linkedIN.jpg" alt="My image">
+  </div>
+  <div class="about-me">
+      <p>
+          <b class="name">Dorian Florescu</b> A Senior Computer Science Engineering Major with a Minor in Business at Michigan State University.
+          <br><br>
+          I am currently engaged in a capstone project with Driven-4, where I am responsible for leading the front-end development.
+          This has been a challenging yet enriching experience as I have had to quickly acquire new skills and knowledge to deliver results.
+          CSE 477 has provided me with valuable insights into the intricacies of web design and architecture, allowing me to deepen my understanding of the subject matter.
+          <br><br>
+          I have a keen interest in bridging the gap between technology and the automotive industry.
+          I am driven to use my skills and knowledge to merge these two fields and bring innovative solutions to the industry.
+          With a passion for both technology and automobiles, I see a unique opportunity to enhance the performance, safety, and user experience of vehicles through cutting-edge technology.
+      </p>
+  </div>
+</div>
+<!-- Another block of content -->
+<!-- <hr> -->
+<hr class="line-break" />
+
+<p class="fun-fact"><b>A fun fact about me: </b></p>
+<p class="fact-text">{{fun_fact}}</p>
+{% endblock %}
+
+

@@ -1,0 +1,82 @@
+{% extends 'shared/layout.html' %}
+
+
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/piano.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='main/js/piano.js') }}" defer></script>
+{% endblock %}
+
+
+
+
+{% block maincontent %}
+<br>
+<p class="piano-info">
+    Behold piano great and old, it's master slumbers in far
+    off cold, If you wish to see anew, call out to it - we
+    see you.
+</p>
+<hr class="line-break" />
+<br>
+<div id="piano-body">
+    <p id='piano-text'>The Great Old One</p>
+    <div id="keys">
+        <div id="note-A">
+            <span id="white-keys">A</span>
+        </div>
+        <div id="note-W">
+            <span class="black-keys">W</span>
+        </div>
+        <div id="note-S">
+            <span id="white-keys">S</span>
+        </div>
+        <div id="note-E">
+            <span class="black-keys">E</span>
+        </div>
+        <div id="note-D">
+            <span id="white-keys">D</span>
+        </div>
+        <div id="note-F">
+            <span id="white-keys">F</span>
+        </div>
+        <div id="note-T">
+            <span class="black-keys">T</span>
+        </div>
+        <div id="note-G">
+            <span id="white-keys">G</span>
+        </div>
+        <div id="note-Y">
+            <span class="black-keys">Y</span>
+        </div>
+        <div id="note-H">
+            <span id="white-keys">H</span>
+        </div>
+        <div id="note-U">
+            <span class="black-keys">U</span>
+        </div>
+        <div id="note-J">
+            <span id="white-keys">J</span>
+        </div>
+        <div id="note-K">
+            <span id="white-keys">K</span>
+        </div>
+        <div id="note-OO">
+            <span class="black-keys">O</span>
+        </div>
+        <div id="note-L">
+            <span id="white-keys">L</span>
+        </div>
+        <div id="note-P">
+            <span class="black-keys">P</span>
+        </div>
+        <div id="note-O">
+            <span id="white-keys">;</span>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

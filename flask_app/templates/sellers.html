@@ -1,0 +1,72 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/seller.css') }}">
+{% endblock %}
+
+
+{% block maincontent %}
+<div>
+  <div>
+    <hr>
+    <form action="/sellers" method="post" enctype="multipart/form-data">
+      <div>
+        <input type="hidden" name="purpose" value="file">
+        <label for="desc"> Description: </label>
+        <input type="text" name="desc" placeholder="Enter description">
+        <br>
+        <label for="token"> Token: </label>
+        <input type="text" name="token" placeholder="Enter token amount">
+        <br>
+        <label for="file"> Image: </label>
+        <input type="file" name="file" />
+        <div>
+          <br>
+          <button type="submit"> Create NFT</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <h2>User <span id="username"></span>'s' NFT's</h2>
+  <div>
+    {% for nft in NFTs %}
+    <div>
+      <div>
+        <img src="static/main/images/{{nft['file_data']}}" alt="NFT image">
+      </div>
+      <div>
+        <p> Token: {{ nft['token']}}</p>
+        <p> Description: {{ nft['description']}}</p>
+      </div>
+      <div>
+        <button onclick="showEditBox('editBox{{nft['nft_id']}}')"> Edit </button>
+        <form action="/sellers" method="post" enctype="multipart/form-data">
+          <div class="editBox" id="editBox{{nft['nft_id']}}">
+            <input type="hidden" name="purpose" value="edit">
+            <input type="hidden" name="nft_id" value="{{nft['nft_id']}}">
+            <input type="text" name="desc" value="{{nft['description']}}">
+            <input type="text" name="token" value="{{nft['token']}}">
+            <button type="submit"> Done </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+
+function showEditBox(boxId) {
+    var editBox = document.getElementById(boxId);
+    editBox.style.display = 'block';
+}
+
+let email = '{{user}}';
+let username = email.split('@')[0];
+document.getElementById('username').textContent = username;
+</script>
+
+{% endblock %}

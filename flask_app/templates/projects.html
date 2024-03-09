@@ -1,0 +1,47 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<span class="project-info">
+    <h2>Below is a list of projects that I worked in CSE 477</h2>
+    <p>Click on the image or the hyperlink to learn more</p>
+    <hr class="line-break" />
+</span>
+<div class="split">
+    <div class="left-col">
+        <a href="piano.html">
+            <img class="selfie" src="static/main/images/piano.jpeg" alt="Piano image" loading="lazy">
+        </a>
+    </div>
+    <div class="info">
+        <h2><b>JavaScript Piano</b></h2>
+        <p>
+            As part of my first Homework assignment in CSE 477. I developed an
+            interactive piano built in pure HTML, CSS, JavaScript. This tool
+            (in addition to my webpage) highlights my ability to built
+            beautiful and mobile friendly front-end applications.
+            <a class="piano-link" href="piano.html"><u>Click here to see and play!</u></a>
+        </p>
+    </div>
+</div>
+<hr class="line-break" />
+<div class="split">
+    <div class="centered-text">
+        <h2><b>NFT Trading Marketplace</b></h2>
+        <p>
+            For my final exam, I developed an NFT Trading Marketplace
+            <form action="/sellers" method="post" class="piano-link">
+                <input type="hidden" name="purpose" value="false">
+                <button type="submit"> Sellers</button>
+            </form>
+            <form action="/buyers" method="post" class="piano-link">
+                <input type="hidden" name="purpose" value="false">
+                <button type="submit"> Buyers</button>
+            </form>
+        </p>
+    </div>
+</div>
+<hr class="line-break" />
+<div>
+    <h2 class="centered-text">More Content Coming Soon!</h2>
+</div>
+{% endblock %}

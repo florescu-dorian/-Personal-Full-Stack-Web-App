@@ -1,0 +1,56 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<div class="resume">
+    {% for inst_id, inst in resume_data.items() %}
+    <div class="insti">
+        <div class="inst-info">
+            <h1>{{ inst['name'] }}</h1>
+            {% if inst['department'] is not none %}
+            <p>{{ inst['department'] }} Department</p>
+            {% endif %}
+            {% if inst['address'] or inst['city'] or inst['state'] or inst['zip'] %}
+            <p>{{ inst['address'] }} {{ inst['city'] }} {{ inst['state'] }} {{ inst['zip'] }}</p>
+            {% endif %}
+        </div>
+        {% if inst['positions'] %}
+        {% for pos_id, pos in inst['positions'].items() %}
+        <div class="pos-info">
+            <h2>{{ pos['title'] }}</h2>
+            <p>{{ pos['start_date'] }} - {{ pos['end_date'] }}</p>
+            <p>{{ pos['responsibilities'] }}</p>
+            {% if pos['experiences'] %}
+            <ul class="exp-list">
+                {% for exp_id, exp in pos['experiences'].items() %}
+                <li class="exp-info">
+                    {% if exp['hyperlink'] %}
+                    <a class="link" href="{{ exp['hyperlink'] }}" target="_blank">{{ exp['name'] }}:</a>
+                    {% else %}
+                    <span>{{ exp['name'] }}:</span>
+                    {% endif %}
+                    {{ exp['description'] }}
+                    {% if exp['skills'] %}
+                    <p class="skill-info">Skills used:
+                        {% for skill_id, skill in exp['skills'].items() %}
+                        <span>{{ skill['name'] }}{% if skill['skill_level'] is not none %} level: {{ skill['skill_level'] }}{% endif %}</span>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% if not loop.last %}
+    <hr>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

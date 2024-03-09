@@ -1,0 +1,112 @@
+main {
+    display: grid;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  /* Splits page into left and right sections */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: center;
+    text-align: justify;
+    max-height: 50vh;
+    max-width: 80vw;
+    overflow: hidden;
+  }
+  
+  
+  /* Handles scrolling functionality for text */
+  .about-me {
+    color: #000000;
+    padding-left: 2rem;
+    overflow: auto;
+  }
+  
+  /* Handles style for images displayed */
+  .selfie {
+    margin: 0px;
+    margin-left: 25%;
+    width: 100%;
+    height: auto;
+    position: static;
+    display: flex;
+    min-height: 100%;
+    max-width: 58%;
+    max-height: 58%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .centered-text {
+    font-size: 2.5;
+    width: 80vw;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: inter-word;
+    color: #000000;
+    margin-top: 10px;
+  }
+  
+  /* Handles style for line breaks displayed */
+  .line-break {
+    size: 10px;
+    width: 80vw;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: inter-word;
+    color: #000000;
+    margin-top: 50px;
+  }
+  
+  /* Makes the images appear on top of text when screen size gets to 650px */
+  @media screen and (max-width:650px) {
+    .split {
+        grid-template-columns: 1fr;
+        margin-top: 5vh;
+        justify-content: center;
+        column-gap: 50px;
+        max-height: none;
+    }
+  }
+  
+  
+  .fun-fact {
+    text-align: center;
+    font-size: 150%;
+  }
+  
+  .fact-text {
+    text-align: center;
+  }
+  
+  .piano-link {
+    color: #0008ff;
+    padding: 0;
+  }
+  
+  .project-info {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 150%;
+  }
+  
+  .piano-info {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 150%;
+    font-family: garamond, serif;
+  }
+  
+  .name {
+    font-size: 200%;
+  }

@@ -1,0 +1,145 @@
+/* Idea from issue #197 - create different css classes for 
+different black keys and shift them left or right according 
+to the position they are needed. */
+
+/* Handles style for piano body */
+#piano-body {
+    height: 560px;
+    width: 600px;
+    background-color: #000000;
+    border-radius: 70px 70px 5px 5px;
+    display: grid;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+}
+
+/* Handles style for piano keys */
+#keys {
+    object-fit: contain;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    bottom: 0;
+    font-family: Lucida, Monospace;
+}
+
+#piano-text {
+    color: white;
+    font-family: garamond, serif;
+    font-size: 300%;
+    text-align: center;
+}
+
+/* Handles style for white keys text */
+#white-keys {
+    bottom: 0;
+    position: absolute;
+    margin-left: -5px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    transform: translateX(100%);
+}
+
+/* Handles style for black keys text */
+.black-keys {
+    bottom: 0;
+    position: absolute;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    transform: translateX(100%);
+}
+
+/* Handles hiding keys when not hovering over */
+#keys:hover #white-keys,
+#keys:hover .black-keys {
+    display: block;
+}
+
+#white-keys,
+.black-keys {
+    display: none;
+}
+
+/* Handles style for key A */
+#note-A {
+    margin-left: 22px;
+    background-color: white;
+}
+
+/* Handles style for key W */
+#note-W {
+    border: 5px solid black;
+    background-color: black;
+    height: 55%;
+    color: white;
+    margin-left: -28px;
+    margin-right: -20px;
+    width: 35px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Handles style for key P */
+#note-P {
+    border: 5px solid black;
+    background-color: black;
+    height: 55%;
+    color: white;
+    margin-left: -13px;
+    margin-right: -35px;
+    width: 35px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Handles style for keys A-; */
+#note-A,
+#note-S,
+#note-D,
+#note-F,
+#note-G,
+#note-H,
+#note-J,
+#note-K,
+#note-L,
+#note-O {
+    border: 5px solid black;
+    background-color: white;
+    height: 95%;
+    width: 46.5px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+/* Handles style for keys E-O */
+#note-E,
+#note-T,
+#note-Y,
+#note-U,
+#note-OO {
+    border: 5px solid black;
+    background-color: black;
+    height: 55%;
+    color: white;
+    margin-left: -17px;
+    margin-right: -29px;
+    width: 35px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+}

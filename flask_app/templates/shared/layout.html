@@ -1,0 +1,115 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dorian Florescu's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/feedback.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/chat.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/login.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/nav.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/feedback.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/chat.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header>
+      <img src="static/main/images/banner.jpg" alt="banner" loading="lazy">
+    </header>
+
+    <!-- The navigation bar -->
+    <nav class='navbar'>
+      {% if user != 'Unknown'%}
+      <p class="hw_3">Welcome <b>{{user}}</b></p>
+      {% elif user == None %}
+      <p class="hw_3">CSE 477 Final</p>
+      {% elif user == '' %}
+      <p class="hw_3">CSE 477 Final</p>
+      {% else %}
+      <p class="hw_3">CSE 477 Final</p>
+      {% endif %}
+      <div class='lists'>
+        <ul>
+          <li> <a href="/home">Home</a> </li>
+          <li> <a href="projects.html">Projects</a> </li>
+          <!-- <li> <a href="/resume">Resume</a> </li> -->
+          <li> <a href="static/main/images/Resume.pdf">Resume</a> </li>
+
+          <!-- <li> <a href="/chat">Chat</a> </li> -->
+
+          <!-- {% if user == 'Unknown'%}
+          <li> <a href="/login">Login</a> </li>
+          {% elif user == ''%}
+          <li> <a href="/login">Login</a> </li>
+          {% else %}
+          <li>  <a href="/logout">Logout</a> </li>
+          {% endif %} -->
+          {% if user == 'Unknown' %}  
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          {% else %}
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          {% endif %}
+
+          <li class="linkd-toggle"> <a href="https://www.linkedin.com/in/florescu-dorian/">
+                  <img class="linkedin-logo" src="static/main/images/social-linkedin.png" alt="LinkedIn" loading="lazy"> </a> </li>
+          <li class="my-linkedin">
+              <a href="https://www.linkedin.com/in/florescu-dorian/">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ham-menu">
+        <img src="/static/main/images/menu-bar.png" alt="Hamburger Menu" loading="lazy">
+      </div>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+
+    <div id="feedback-btn-container">
+      <p>Feedback</p>
+    </div>
+
+
+    <div id="feedback-form-container">
+      <form id="feedback-form" action="processfeedback" method="POST" enctype="multipart/form-data">
+        <input name="name" type="text" placeholder="Your Name" required/>
+        <input name="email" type="email" placeholder="Your Email" required/>
+        <textarea name="feedback" rows="5" placeholder="Enter your feedback" required></textarea>
+        <input id="feedback-submit" name="submit" value="submit" type="submit"/>
+      </form>
+    </div>
+
+    <!-- The footer of the file -->
+    <footer>
+        <p>© 2023 Dorian Florescu</p>
+    </footer>
+
+    </article>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+

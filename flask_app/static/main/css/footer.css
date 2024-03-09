@@ -1,0 +1,9 @@
+/* Handles style for footer */
+footer {
+    background: #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    margin-top: 5vh;
+  }
