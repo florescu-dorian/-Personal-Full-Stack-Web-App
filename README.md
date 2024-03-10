@@ -1,4 +1,4 @@
-Introduction
+**Introduction**
 Welcome to the repository for my Full Stack Web App! This project was developed as part of my college coursework, aiming to provide hands-on experience with various tools and technologies commonly used in web development. Below, you'll find instructions for setting up the project, an overview of its features, and guidelines for contributing.
 
 Purpose
